@@ -1,0 +1,12 @@
+general:
+  log_level: info
+
+exporter:
+  class: Startwind\WebInsights\Aggregation\Exporter\MongoDbExporter\MongoDbGrowthExporter
+
+retriever:
+  class: Startwind\WebInsights\Aggregation\Retriever\DebugRetriever
+
+aggregators:
+  - Startwind\WebInsights\Aggregation\Aggregator\General\RawDataAggregator
+

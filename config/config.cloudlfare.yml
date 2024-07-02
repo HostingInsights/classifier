@@ -1,0 +1,24 @@
+general:
+  log_level: info
+
+retriever:
+  class: Startwind\WebInsights\Response\Retriever\FakeRetriever
+
+storage:
+  class: Startwind\WebInsights\Storage\FileStorage
+  options:
+    directory: _storage
+
+feeder:
+  class: Startwind\WebInsights\Classification\Feeder\FileFeeder
+  options:
+   filename: _tmp/cloudflare-radar-domains-top-200-20240617-20240624.csv
+
+exporter:
+  - Startwind\WebInsights\Classification\Exporter\Result\ApiExtraExporter
+  # - Startwind\WebInsights\Classification\Exporter\Result\SimpleCliExporter
+
+classifiers:
+  - Startwind\WebInsights\Classification\Classifier\Static\StaticExtrasClassifier:
+        tags:
+          - extra_:cloudflare:200
