@@ -144,6 +144,8 @@ class HtmlDocument
     {
         $dom = new \DOMDocument();
 
+        if (strlen($this->plainContent) === 0) return false;
+
         @$dom->loadHTML($this->plainContent);
 
         $sections = $dom->getElementsByTagName($name);
