@@ -241,6 +241,10 @@ class ClassificationConfiguration extends Configuration
             }
         }
 
+        if (array_key_exists('status', $asArray) && $asArray['status'] === 'failed') {
+            throw new EmptyQueueException();
+        }
+
         self::assertConfigArrayValid($asArray);
 
         return new self($asArray, $client, $output);
