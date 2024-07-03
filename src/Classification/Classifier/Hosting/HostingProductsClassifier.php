@@ -303,7 +303,7 @@ class HostingProductsClassifier extends PatternAwareClassifier
             'social-media:social-pilot' => ['Social Pilot'],
 
             # Server
-            'server:root' => ['root server', 'root server'],
+            'server:root' => ['root server', 'root servers'],
             'server:dedicated' => ['dedicated server', 'Dedicated Servers'],
             'server:shared' => ['shared hosting'],
             'server:vps' => ['vps', 'vServer', 'vServers'],

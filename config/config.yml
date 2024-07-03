@@ -157,6 +157,8 @@ classifiers:
   - Startwind\WebInsights\Classification\Classifier\Hosting\HostingUspClassifier
   - Startwind\WebInsights\Classification\Classifier\Service\Evaluation\TrustpilotClassifier
 
+  # Company
+  - Startwind\WebInsights\Classification\Classifier\Company\CompanyFormClassifier
 
   # Post Classifiers
   - Startwind\WebInsights\Classification\Classifier\Hosting\HostingCompanyClassifier
