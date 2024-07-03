@@ -129,6 +129,32 @@ class HtmlDocument
         }
     }
 
+    public function getFooter(): self|false
+    {
+        $section = $this->getSectionAsString('footer');
+
+        if ($section) {
+            return new self($section);
+        } else {
+            return false;
+        }
+    }
+
+    private function getSectionAsString($name): string|false
+    {
+        $dom = new \DOMDocument();
+
+        @$dom->loadHTML($this->plainContent);
+
+        $sections = $dom->getElementsByTagName($name);
+
+        if (count($sections) > 0) {
+            return $sections[0]->textContent;
+        } else {
+            return false;
+        }
+    }
+
     public function containsAny(array $strings, bool $caseSensitive = false): bool
     {
         foreach ($strings as $string) {

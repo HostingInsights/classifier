@@ -36,7 +36,9 @@ abstract class XPathHelper
 
         $elements = $domXpath->query($xPath);
 
-        if ($elements->length > 0) return $prefix . $elements[0]->value;
+        if ($elements->length > 0) {
+            return $prefix . $elements[0]->value;
+        }
 
         return false;
     }
