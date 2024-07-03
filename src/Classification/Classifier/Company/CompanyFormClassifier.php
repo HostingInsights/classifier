@@ -14,6 +14,7 @@ class CompanyFormClassifier implements Classifier
         'GmbH' => 'gmbh',
         'UG' => 'ug',
         'Gbr' => 'gbr',
+        'se' => 'se',
     ];
 
     public function classify(HttpResponse $httpResponse, array $existingTags): array
