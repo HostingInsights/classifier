@@ -26,7 +26,7 @@ cd /var/tools/zone/file/
 gunzip zonefile_full.gz
 
 # ~35 min | Normalize the file so we only have mandatory fields and the IP address is a long and first field
-/usr/bin/php /var/tools/classifier/tools/normalize_zone.php /var/tools/zone/file/zonefile_full /var/tools/zone/file/zonefile_normalized.csv
+/usr/bin/php /var/tools/webinsights_classifier/tools/normalize_zone.php /var/tools/zone/file/zonefile_full /var/tools/zone/file/zonefile_normalized.csv
 
 # Remove the origin zonefile to not run into a disk problem
 rm zonefile_full
@@ -38,7 +38,7 @@ sort -o zonefile_sorted.csv -n zonefile_normalized.csv
 rm zonefile_normalized.csv
 
 # ~11 hours | Import data
-/usr/bin/php /var/tools/classifier/tools/zonefile_import.php /var/tools/zone/file/zonefile_sorted.csv
+/usr/bin/php /var/tools/webinsights_classifier/tools/zonefile_import.php /var/tools/zone/file/zonefile_sorted.csv
 
 # Remove the sorted file
 rm zonefile_sorted.csv
