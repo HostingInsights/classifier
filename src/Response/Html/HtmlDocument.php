@@ -140,6 +140,15 @@ class HtmlDocument
         }
     }
 
+    public function getTitle(): string|false
+    {
+        if (preg_match('/<title>(.*?)<\/title>/', $this->plainContent, $matches)) {
+            return $matches[1];
+        }
+
+        return false;
+    }
+
     private function getSectionAsString($name): string|false
     {
         $dom = new \DOMDocument();

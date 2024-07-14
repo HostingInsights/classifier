@@ -1,7 +1,7 @@
 <?php
 
 use GuzzleHttp\RequestOptions;
-use Startwind\WebInsights\Classification\Classifier\Hosting\HostingProductsClassifier;
+use Startwind\WebInsights\Classification\Classifier\Industry\Hosting\HostingProductsClassifier;
 
 include_once __DIR__ . '/../vendor/autoload.php';
 

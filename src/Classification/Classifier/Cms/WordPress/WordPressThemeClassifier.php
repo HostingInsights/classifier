@@ -2,9 +2,9 @@
 
 namespace Startwind\WebInsights\Classification\Classifier\Cms\WordPress;
 
-use Startwind\WebInsights\Classification\Classifier\Hosting\WhmcsClassifier;
 use Startwind\WebInsights\Classification\Classifier\Http\Html\HtmlClassifier;
 use Startwind\WebInsights\Classification\Classifier\Http\Http\ProgrammingLanguageClassifier;
+use Startwind\WebInsights\Classification\Classifier\Industry\Hosting\WhmcsClassifier;
 use Startwind\WebInsights\Response\Html\HtmlDocument;
 
 class WordPressThemeClassifier extends HtmlClassifier
