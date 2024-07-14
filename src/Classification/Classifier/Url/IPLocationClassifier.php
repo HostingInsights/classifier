@@ -11,6 +11,7 @@ use Startwind\WebInsights\Util\TagHelper;
 class IPLocationClassifier implements Classifier
 {
     public const TAG_HOSTING_LOCATION_PREFIX = 'hosting:location:';
+    public const TAG_HOSTING_LOCATION_PREFIX_ASN = self::TAG_HOSTING_LOCATION_PREFIX . 'asn:';
     public const TAG_HOSTING_LOCATION_ISP_PREFIX = self::TAG_HOSTING_LOCATION_PREFIX . 'isp:';
 
     public function classify(HttpResponse $httpResponse, array $existingTags): array
@@ -36,7 +37,7 @@ class IPLocationClassifier implements Classifier
                 $asParts = explode(' ', $data['as']);
                 $as = str_replace('as', '', strtolower($asParts[0]));
                 $tags[] = self::TAG_HOSTING_LOCATION_PREFIX . 'as:' . TagHelper::normalize($data['as']);
-                $tags[] = self::TAG_HOSTING_LOCATION_PREFIX . 'asn:' . $as;
+                $tags[] = self::TAG_HOSTING_LOCATION_PREFIX_ASN . $as;
             }
         }
 
