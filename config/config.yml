@@ -154,13 +154,14 @@ classifiers:
   - Startwind\WebInsights\Classification\Classifier\Characteristic\Http\TransferTimeClassifier
 
   # Hosting
-  - Startwind\WebInsights\Classification\Classifier\Hosting\HostingProductsClassifier
-  - Startwind\WebInsights\Classification\Classifier\Hosting\HostingUspClassifier
+  - Startwind\WebInsights\Classification\Classifier\Industry\Hosting\HostingProductsClassifier
+  - Startwind\WebInsights\Classification\Classifier\Industry\Hosting\HostingUspClassifier
   - Startwind\WebInsights\Classification\Classifier\Service\Evaluation\TrustpilotClassifier
 
   # Company
   - Startwind\WebInsights\Classification\Classifier\Company\CompanyFormClassifier
+  - Startwind\WebInsights\Classification\Classifier\Industry\Agency\AgencyCompanyClassifier
 
   # Post Classifiers
-  - Startwind\WebInsights\Classification\Classifier\Hosting\HostingCompanyClassifier
+  - Startwind\WebInsights\Classification\Classifier\Industry\Hosting\HostingCompanyClassifier
   - Startwind\WebInsights\Classification\Classifier\Company\CompanyLocationClassifier

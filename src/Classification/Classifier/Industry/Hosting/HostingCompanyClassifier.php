@@ -1,6 +1,6 @@
 <?php
 
-namespace Startwind\WebInsights\Classification\Classifier\Hosting;
+namespace Startwind\WebInsights\Classification\Classifier\Industry\Hosting;
 
 use Startwind\WebInsights\Classification\Classifier\Classifier;
 use Startwind\WebInsights\Response\HttpResponse;

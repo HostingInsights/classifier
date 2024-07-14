@@ -4,7 +4,7 @@ namespace Startwind\WebInsights\Aggregation\Aggregator\Industry\Hosting;
 
 use Startwind\WebInsights\Aggregation\Aggregator\CountingAggregator;
 use Startwind\WebInsights\Classification\ClassificationResult;
-use Startwind\WebInsights\Classification\Classifier\Hosting\HostingProductsClassifier;
+use Startwind\WebInsights\Classification\Classifier\Industry\Hosting\HostingProductsClassifier;
 
 class HostingProductsAggregator extends CountingAggregator
 {

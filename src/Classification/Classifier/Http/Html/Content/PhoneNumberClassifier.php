@@ -3,10 +3,9 @@
 namespace Startwind\WebInsights\Classification\Classifier\Http\Html\Content;
 
 use Startwind\WebInsights\Classification\Classifier\Classifier;
-use Startwind\WebInsights\Classification\Classifier\ExtrasClassifier;
 use Startwind\WebInsights\Response\HttpResponse;
 
-class PhoneNumberClassifier implements Classifier, ExtrasClassifier
+class PhoneNumberClassifier implements Classifier
 {
     const TAG = 'html:content:phone:';
 
@@ -30,6 +29,7 @@ class PhoneNumberClassifier implements Classifier, ExtrasClassifier
         foreach ($entries as $entry) {
             $href = $entry->getAttribute('href');
             $telNumber = substr($href, 4);
+
             $tags[] = self::TAG . $telNumber;
         }
 
