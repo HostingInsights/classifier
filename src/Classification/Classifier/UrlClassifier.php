@@ -10,7 +10,7 @@ abstract class UrlClassifier implements Classifier
 {
     public function classify(HttpResponse $httpResponse, array $existingTags): array
     {
-        return $this->doClassification($httpResponse->getRequestUri(), $existingTags);
+        return $this->doClassification($httpResponse->getEffectiveUri(), $existingTags);
     }
 
     abstract protected function doClassification(UriInterface $uri, array $existingTags): array;
