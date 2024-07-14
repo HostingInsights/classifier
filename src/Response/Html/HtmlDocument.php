@@ -140,13 +140,27 @@ class HtmlDocument
         }
     }
 
-    public function getTitle(): string|false
+    public function getTitle(): string
     {
         if (preg_match('/<title>(.*?)<\/title>/', $this->plainContent, $matches)) {
             return $matches[1];
         }
 
-        return false;
+        return "";
+    }
+
+    public function getMetaDescription(): string
+    {
+        $dom = $this->asDomDocument();
+        $metaTags = $dom->getElementsByTagName('meta');
+
+        foreach ($metaTags as $meta) {
+            if ($meta->getAttribute('name') === 'description') {
+                return $meta->getAttribute('content');
+            }
+        }
+
+        return "";
     }
 
     private function getSectionAsString($name): string|false

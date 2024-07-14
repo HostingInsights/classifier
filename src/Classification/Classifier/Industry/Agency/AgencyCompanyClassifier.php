@@ -17,9 +17,11 @@ class AgencyCompanyClassifier implements Classifier
     public function classify(HttpResponse $httpResponse, array $existingTags): array
     {
         $title = $httpResponse->getHtmlDocument()->getTitle();
+        $metaDescription = $httpResponse->getHtmlDocument()->getMetaDescription();
 
         foreach ($this->keywords as $keyword) {
-            if (str_contains(strtolower($title), $keyword)) {
+            if (str_contains(strtolower($title), $keyword)
+                || str_contains(strtolower($metaDescription), $keyword)) {
                 return [self::CLASSIFIER_PREFIX];
             }
         }
