@@ -3,8 +3,13 @@
 $from = $argv[1];
 $to = $argv[2];
 
+if (!file_exists($from)) {
+    $from .= $from . '.gz';
+}
+
 $fromHandle = fopen($from, 'r');
 $toHandle = fopen($to, 'w');
+
 
 $count = 0;
 

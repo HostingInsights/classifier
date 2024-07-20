@@ -22,8 +22,8 @@ wget --no-verbose https://zonefiles.io/a/ixgkco2gjgn94vl384ou/fulldata-gz/1/ -O 
 # Go to the correct directory
 cd /var/tools/zone/file/
 
-# Uncompress the .gz file
-gunzip zonefile_full.gz
+# Decompress the .gz file
+gunzip zonefile_full.gz || true
 
 # ~35 min | Normalize the file so we only have mandatory fields and the IP address is a long and first field
 /usr/bin/php /var/tools/webinsights_classifier/tools/normalize_zone.php /var/tools/zone/file/zonefile_full /var/tools/zone/file/zonefile_normalized.csv
