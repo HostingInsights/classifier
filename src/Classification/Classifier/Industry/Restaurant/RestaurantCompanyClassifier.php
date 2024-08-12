@@ -18,11 +18,14 @@ class RestaurantCompanyClassifier implements Classifier
         $title = $httpResponse->getHtmlDocument()->getTitle();
         $metaDescription = $httpResponse->getHtmlDocument()->getMetaDescription();
 
+        $domain = (string)$httpResponse->getRequestUri();
+
         foreach ($this->keywords as $keyword) {
             $keyword = strtolower($keyword);
 
             if (str_contains(strtolower($title), $keyword)
-                || str_contains(strtolower($metaDescription), $keyword)) {
+                || str_contains(strtolower($metaDescription), $keyword)
+                || str_contains(strtolower($domain), $keyword)) {
                 return [self::CLASSIFIER_PREFIX];
             }
         }
