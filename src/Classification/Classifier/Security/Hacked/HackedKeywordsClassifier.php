@@ -3,6 +3,7 @@
 namespace Startwind\WebInsights\Classification\Classifier\Security\Hacked;
 
 use Startwind\WebInsights\Classification\Classifier\Classifier;
+use Startwind\WebInsights\Response\Html\HtmlDocument;
 use Startwind\WebInsights\Response\HttpResponse;
 
 class HackedKeywordsClassifier implements Classifier
@@ -12,7 +13,7 @@ class HackedKeywordsClassifier implements Classifier
     private array $keywords = [
         'porn ', 'p0rn ',
         'casino', 'cas1no',
-        'sex'
+        'sex', 's3x'
     ];
 
     public function classify(HttpResponse $httpResponse, array $existingTags): array
@@ -20,7 +21,7 @@ class HackedKeywordsClassifier implements Classifier
         $tags = [];
 
         foreach ($this->keywords as $keyword) {
-            if ($httpResponse->getHtmlDocument()->contains($keyword)) {
+            if ($httpResponse->getHtmlDocument()->contains($keyword, false, HtmlDocument::SOURCE_HTML, true)) {
                $tags[] = self::TAG_PREFIX. $keyword;
             }
         }
