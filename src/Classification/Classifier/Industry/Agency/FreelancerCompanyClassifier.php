@@ -1,17 +1,16 @@
 <?php
 
-namespace Startwind\WebInsights\Classification\Classifier\Industry\Restaurant;
+namespace Startwind\WebInsights\Classification\Classifier\Industry\Agency;
 
 use Startwind\WebInsights\Classification\Classifier\Classifier;
 use Startwind\WebInsights\Response\HttpResponse;
 
-class RestaurantCompanyClassifier implements Classifier
+class FreelancerCompanyClassifier implements Classifier
 {
-    public const CLASSIFIER_PREFIX = 'industry:restaurant';
+    public const CLASSIFIER_PREFIX = 'industry:freelancer';
 
     private array $keywords = [
-        "restaurant",
-        "bar",
+        "freelancer"
     ];
 
     public function classify(HttpResponse $httpResponse, array $existingTags): array
@@ -19,14 +18,11 @@ class RestaurantCompanyClassifier implements Classifier
         $title = $httpResponse->getHtmlDocument()->getTitle();
         $metaDescription = $httpResponse->getHtmlDocument()->getMetaDescription();
 
-        $domain = (string)$httpResponse->getRequestUri();
-
         foreach ($this->keywords as $keyword) {
             $keyword = strtolower($keyword);
 
             if (str_contains(strtolower($title), $keyword)
-                || str_contains(strtolower($metaDescription), $keyword)
-                || str_contains(strtolower($domain), $keyword)) {
+                || str_contains(strtolower($metaDescription), $keyword)) {
                 return [self::CLASSIFIER_PREFIX];
             }
         }

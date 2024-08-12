@@ -13,7 +13,7 @@ class AgencyCompanyClassifier implements Classifier
         "agentur",
         "agency",
         "agencia",
-        "agence",
+        "agence digital",
         "agenzia",
         "agência",
         "Агентство",
