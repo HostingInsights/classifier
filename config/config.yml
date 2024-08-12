@@ -161,6 +161,8 @@ classifiers:
   # Company
   - Startwind\WebInsights\Classification\Classifier\Company\CompanyFormClassifier
   - Startwind\WebInsights\Classification\Classifier\Industry\Agency\AgencyCompanyClassifier
+  - Startwind\WebInsights\Classification\Classifier\Industry\Restaurant\RestaurantCompanyClassifier
+  - Startwind\WebInsights\Classification\Classifier\Company\LocalBusinessClassifier
 
   # Post Classifiers
   - Startwind\WebInsights\Classification\Classifier\Industry\Hosting\HostingCompanyClassifier

@@ -1,35 +1,16 @@
 <?php
 
-namespace Startwind\WebInsights\Classification\Classifier\Industry\Agency;
+namespace Startwind\WebInsights\Classification\Classifier\Industry\Restaurant;
 
 use Startwind\WebInsights\Classification\Classifier\Classifier;
 use Startwind\WebInsights\Response\HttpResponse;
 
-class AgencyCompanyClassifier implements Classifier
+class RestaurantCompanyClassifier implements Classifier
 {
-    public const CLASSIFIER_PREFIX = 'industry:agency';
+    public const CLASSIFIER_PREFIX = 'industry:restaurant';
 
     private array $keywords = [
-        "agentur",
-        "agency",
-        "agencia",
-        "agence",
-        "agenzia",
-        "agência",
-        "Агентство",
-        "机构 / 代理机构",
-        "代理店",
-        "대리점",
-        "وكالة",
-        "Ajans",
-        "एजेंसी",
-        "এজেন্সি",
-        "agentschap",
-        "Πρακτορείο",
-        "Byrå",
-        "agencja",
-        "Ügynökség",
-        "agenție"
+        "restaurant",
     ];
 
     public function classify(HttpResponse $httpResponse, array $existingTags): array

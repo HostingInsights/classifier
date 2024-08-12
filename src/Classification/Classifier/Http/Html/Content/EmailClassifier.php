@@ -24,6 +24,7 @@ class EmailClassifier implements Classifier, ExtrasClassifier
                     && !str_contains($email, '.svg')
                     && !str_contains($email, '.webp')
                     && !str_contains($email, '.jpg')
+                    && !str_contains($email, '.avif')
                     && !str_contains($email, '.png')) {
                     $tags[] = self::TAG;
                     $tags[] = self::TAG . ':' . $email;

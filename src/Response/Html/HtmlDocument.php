@@ -142,8 +142,11 @@ class HtmlDocument
 
     public function getTitle(): string
     {
-        if (preg_match('/<title>(.*?)<\/title>/', $this->plainContent, $matches)) {
-            return $matches[1];
+        $dom = $this->asDomDocument();
+        $titles = $dom->getElementsByTagName('title');
+
+        foreach ($titles as $title) {
+            return $title->textContent;
         }
 
         return "";
