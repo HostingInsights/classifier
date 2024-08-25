@@ -168,3 +168,4 @@ classifiers:
   # Post Classifiers
   - Startwind\WebInsights\Classification\Classifier\Industry\Hosting\HostingCompanyClassifier
   - Startwind\WebInsights\Classification\Classifier\Company\CompanyLocationClassifier
+  - Startwind\WebInsights\Classification\Classifier\Http\Html\Content\Social\SocialMediaCountClassifier
