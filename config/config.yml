@@ -70,6 +70,7 @@ classifiers:
   - Startwind\WebInsights\Classification\Classifier\Ecommerce\WooCommerce\WooCommercePluginClassifier
   - Startwind\WebInsights\Classification\Classifier\Ecommerce\BigCommerceClassifier
   - Startwind\WebInsights\Classification\Classifier\Ecommerce\SquarespaceCommerceClassifier
+  - Startwind\WebInsights\Classification\Classifier\Ecommerce\GambioClassifier
 
   - Startwind\WebInsights\Classification\Classifier\Ecommerce\EcommerceClassifier
 
