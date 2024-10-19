@@ -158,6 +158,8 @@ classifiers:
   - Startwind\WebInsights\Classification\Classifier\Industry\Hosting\HostingProductsClassifier
   - Startwind\WebInsights\Classification\Classifier\Industry\Hosting\HostingUspClassifier
   - Startwind\WebInsights\Classification\Classifier\Service\Evaluation\TrustpilotClassifier
+  
+  - Startwind\WebInsights\Classification\Classifier\Industry\Hosting\WordPressHostingClassifier
 
   # Company
   - Startwind\WebInsights\Classification\Classifier\Company\CompanyFormClassifier
