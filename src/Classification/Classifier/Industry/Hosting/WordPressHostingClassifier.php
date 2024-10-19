@@ -7,7 +7,7 @@ use Startwind\WebInsights\Response\HttpResponse;
 
 class WordPressHostingClassifier implements Classifier
 {
-    public const CLASSIFIER_PREFIX = 'special:wordpress-hosting';
+    public const CLASSIFIER_PREFIX = 'trademark:wordpress:wordpress-hosting';
 
     public function classify(HttpResponse $httpResponse, array $existingTags): array
     {
