@@ -43,4 +43,3 @@ composer install
 ```shell
 php bin/classifier.php classify https://www.ionos.de
 ```
-

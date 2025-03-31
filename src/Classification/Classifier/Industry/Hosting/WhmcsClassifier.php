@@ -6,3 +6,4 @@ class WhmcsClassifier
 {
     public const TAG = 'hosting:tools:whmcs';
 }
+
