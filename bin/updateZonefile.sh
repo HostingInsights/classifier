@@ -16,8 +16,10 @@ if [ ! -d "/var/tools/zone/file" ]; then
   mkdir /var/tools/zone/file
 fi
 
-# Download the Zonefile via API. This is a gziped file
-wget --no-verbose https://zonefiles.io/a/ixgkco2gjgn94vl384ou/fulldata-gz/1/ -O /var/tools/zone/file/zonefile_full.gz
+# Download the Zonefile via API. This is a gziped file.
+# zonefiles.io shut down in August 2025; NetAPI serves the same download (zone 1 = all zones) at the same
+# path layout, with a NetAPI account token in place of the old key: https://netapi.com/zonefiles-io-api/
+wget --no-verbose https://netapi.com/zf-api/a/YOUR_NETAPI_TOKEN/fulldata-gz/1/ -O /var/tools/zone/file/zonefile_full.gz
 
 # Go to the correct directory
 cd /var/tools/zone/file/
